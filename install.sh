@@ -10,6 +10,20 @@ echo -e $"${GREEN}Updating system...${RESET}\n"
 sudo dnf update -y
 echo $"Ok! \n"
 
+echo -e $"${GREEN}Installing RPM Fusion repositories...${RESET}\n"
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+echo $"Ok! \n"
+
+echo -e $"${GREEN}Updating system...${RESET}\n"
+sudo dnf update -y
+echo $"Ok! \n"
+
+echo -e $"${GREEN}Installing Codecs...${RESET}\n"
+sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+sudo dnf groupupdate sound-and-video
+echo $"Ok! \n"
+
 echo -e $"${GREEN}Installing Oh My Zsh with plugins(zsh-autosuggestions and zsh-syntax-highlighting) and theme(powerlevel10k)...${RESET}\n"
 sudo dnf install zsh autojump sqlite -y
 echo
