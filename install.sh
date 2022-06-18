@@ -30,6 +30,14 @@ sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=Pack
 sudo dnf groupupdate sound-and-video
 echo $"Ok! \n"
 
+echo -e $"${GREEN}Adding Flatpak repository...${RESET}\n"
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+echo $"Ok! \n"
+
+echo -e $"${GREEN}Installing Discord and Spotify, both Flatpak...${RESET}\n"
+flatpak install discord spotify
+echo $"Ok! \n"
+
 echo -e $"${GREEN}Installing Oh My Zsh with plugins(zsh-autosuggestions and zsh-syntax-highlighting) and theme(powerlevel10k)...${RESET}\n"
 sudo dnf install zsh autojump sqlite -y
 echo
@@ -74,8 +82,8 @@ sudo dnf install ./Insomnia.Core-2022.4.1.rpm -y
 rm -f Insomnia.Core-2022.4.1.rpm
 echo $"Ok! \n"
 
-echo -e $"${GREEN}Installing Google Chrome, Transmisson(BitTorrent client gtk), GNOME Power Manager, GNOME Tweaks...${RESET}\n"
-sudo dnf install google-chrome-stable transmission-gtk gnome-power-manager gnome-tweaks -y
+echo -e $"${GREEN}Installing Google Chrome, Transmisson(BitTorrent client gtk), GNOME Power Manager, GNOME Tweaks, Telegram...${RESET}\n"
+sudo dnf install google-chrome-stable transmission-gtk gnome-power-manager gnome-tweaks telegram-desktop -y
 echo $"Ok! \n"
 
 echo -e $"${GREEN}Installing Steam and Lutris...${RESET}\n"
