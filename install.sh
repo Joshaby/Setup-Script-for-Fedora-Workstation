@@ -6,6 +6,11 @@ RESET='\033[0m'
 echo -e "${GREEN}Welcome to Setup Script for Fedora Workstation!${RESET}"
 echo -e $"${GREEN}Script to install some programs and tools in Fedora Workstation!${RESET}\n"
 
+echo -e $"${GREEN}Making dnf faster (with deltarpm and fastestmirror)...${RESET}\n"
+echo "fastestmirror=true
+deltarpm=true" | sudo tee -a /etc/dnf/dnf.conf
+echo $"Ok! \n"
+
 echo -e $"${GREEN}Updating system...${RESET}\n"
 sudo dnf update -y
 echo $"Ok! \n"
@@ -13,6 +18,7 @@ echo $"Ok! \n"
 echo -e $"${GREEN}Installing RPM Fusion repositories...${RESET}\n"
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf groupupdate core
 echo $"Ok! \n"
 
 echo -e $"${GREEN}Updating system...${RESET}\n"
@@ -70,4 +76,8 @@ echo $"Ok! \n"
 
 echo -e $"${GREEN}Installing Google Chrome, Transmisson(BitTorrent client gtk), GNOME Power Manager, GNOME Tweaks...${RESET}\n"
 sudo dnf install google-chrome-stable transmission-gtk gnome-power-manager gnome-tweaks -y
+echo $"Ok! \n"
+
+echo -e $"${GREEN}Installing Steam and Lutris...${RESET}\n"
+sudo dnf install steam lutris -y
 echo $"Ok! \n"
