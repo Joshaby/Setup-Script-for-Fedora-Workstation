@@ -43,8 +43,8 @@ sudo dnf install zsh autojump sqlite -y
 echo
 sudo usermod $USER -s /bin/zsh
 echo
+echo -e $"${GREEN}After installing oh my zsh, type exit and press enter to continue the installation!${RESET}"
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-echo -e $"${GREEN}Type exit and press enter to continue the installation!${RESET}"
 echo
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
