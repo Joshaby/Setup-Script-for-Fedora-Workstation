@@ -35,7 +35,7 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 echo -e $"${GREEN}Ok!${RESET}\n"
 
 echo -e $"${GREEN}Installing Discord, Spotify and Kotatogram, all, Flatpak apps...${RESET}\n"
-flatpak install discord spotify
+flatpak install discord spotify kotatogram
 echo -e $"${GREEN}Ok!${RESET}\n"
 
 echo -e $"${GREEN}Installing Oh My Zsh with plugins(zsh-autosuggestions and zsh-syntax-highlighting) and theme(powerlevel10k)...${RESET}\n"
