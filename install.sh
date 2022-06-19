@@ -3,8 +3,8 @@
 GREEN='\033[0;32m'
 RESET='\033[0m'
 
-echo -e "${GREEN}Welcome to Setup Script for Fedora Workstation!${RESET}"
-echo -e $"${GREEN}Script to install some programs and tools in Fedora Workstation!${RESET}\n"
+echo -e "${GREEN}Setup Script for Fedora Workstation!${RESET}"
+echo -e $"${GREEN}Script to install some programs, tools and others things on Fedora Workstation!${RESET}\n"
 
 echo -e $"${GREEN}Making dnf faster (with deltarpm and fastestmirror)...${RESET}\n"
 echo "fastestmirror=true
@@ -76,8 +76,8 @@ tar -xzf ideaIU-2022.1.2.tar.gz
 sudo mv `find . -name "idea-IU*"` /opt/intellij
 sudo ln -rs /opt/intellij/bin/idea.sh /usr/bin/intellij
 rm -f `find . -name "idea-IU*"`
-rm -f "ideaIU*"
-echo -e $"${GREEN}After running this script, run intellij on terminal, and create desktop entry${GREEN}\n"
+rm -f ideaIU-2022.1.2.tar.gz
+echo -e $"${GREEN}After running this script, run intellij on terminal, and create desktop entry${RESET}\n"
 wget https://github.com/Kong/insomnia/releases/download/core%402022.4.1/Insomnia.Core-2022.4.1.rpm
 echo
 sudo dnf install ./Insomnia.Core-2022.4.1.rpm -y
@@ -94,6 +94,8 @@ echo -e $"${GREEN}Ok!${RESET}\n"
 
 echo -e $"${GREEN}Installing ProtonGE...${RESET}\n"
 wget https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton7-20/GE-Proton7-20.tar.gz
+mkdir ~/.steam
+mkdir ~/.steam/root
 mkdir ~/.steam/root/compatibilitytools.d
 tar -xzf GE-Proton7-20.tar.gz -C ~/.steam/root/compatibilitytools.d
 rm -f GE-Proton7-20.tar.gz
