@@ -34,7 +34,7 @@ echo -e $"${GREEN}Adding Flatpak repository...${RESET}\n"
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 echo -e $"${GREEN}Ok!${RESET}\n"
 
-echo -e $"${GREEN}Installing Discord and Spotify, both Flatpak...${RESET}\n"
+echo -e $"${GREEN}Installing Discord, Spotify and Kotatogram, all, Flatpak apps...${RESET}\n"
 flatpak install discord spotify
 echo -e $"${GREEN}Ok!${RESET}\n"
 
@@ -72,7 +72,7 @@ sudo dnf install code -y
 echo
 wget https://download.jetbrains.com/idea/ideaIU-2022.1.2.tar.gz
 echo
-tar -xzvf ideaIU-2022.1.2.tar.gz > /dev/null
+tar -xzf ideaIU-2022.1.2.tar.gz
 sudo mv `find . -name "idea-IU*"` /opt/intellij
 sudo ln -rs /opt/intellij/bin/idea.sh /usr/bin/intellij
 rm -f `find . -name "idea-IU*"`
@@ -84,10 +84,17 @@ sudo dnf install ./Insomnia.Core-2022.4.1.rpm -y
 rm -f Insomnia.Core-2022.4.1.rpm
 echo -e $"${GREEN}Ok!${RESET}\n"
 
-echo -e $"${GREEN}Installing Google Chrome, Transmisson(BitTorrent client gtk), GNOME Power Manager, GNOME Tweaks, Telegram...${RESET}\n"
-sudo dnf install google-chrome-stable transmission-gtk gnome-power-manager gnome-tweaks telegram-desktop -y
+echo -e $"${GREEN}Installing Google Chrome, Transmisson(BitTorrent client gtk), GNOME Power Manager, GNOME Tweaks, File Roller...${RESET}\n"
+sudo dnf install google-chrome-stable transmission-gtk gnome-power-manager gnome-tweaks file-roller file-roller-nautilus -y
 echo -e $"${GREEN}Ok!${RESET}\n"
 
 echo -e $"${GREEN}Installing Steam, Lutris and MangoHUD...${RESET}\n"
 sudo dnf install steam lutris mangohud -y
+echo -e $"${GREEN}Ok!${RESET}\n"
+
+echo -e $"${GREEN}Installing ProtonGE...${RESET}\n"
+wget https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton7-20/GE-Proton7-20.tar.gz
+mkdir ~/.steam/root/compatibilitytools.d
+tar -xzf GE-Proton7-20.tar.gz -C ~/.steam/root/compatibilitytools.d
+rm -f GE-Proton7-20.tar.gz
 echo -e $"${GREEN}Ok!${RESET}\n"
