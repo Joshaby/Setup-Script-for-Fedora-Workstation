@@ -92,11 +92,8 @@ echo -e $"${GREEN}Installing Steam, Lutris and MangoHUD...${RESET}\n"
 sudo dnf install steam lutris mangohud -y
 echo -e $"${GREEN}Ok!${RESET}\n"
 
-echo -e $"${GREEN}Installing ProtonGE...${RESET}\n"
-wget https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton7-20/GE-Proton7-20.tar.gz
-mkdir ~/.steam
-mkdir ~/.steam/root
-mkdir ~/.steam/root/compatibilitytools.d
-tar -xzf GE-Proton7-20.tar.gz -C ~/.steam/root/compatibilitytools.d
-rm -f GE-Proton7-20.tar.gz
+echo -e $"${GREEN}Downloading Fantasque Sans Mono NerdFont...${RESET}\n"
+echo -e $"${GREEN}Use this font in terminals, text editors and IDEs(Use GNOME Tweaks to change the font)!${RESET}\n"
+if [ ! -d ~/.local/fonts ] $$ { mkdir ~/.local/fonts; exit 0 }
+wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FantasqueSansMono/Regular/complete/Fantasque%20Sans%20Mono%20Regular%20Nerd%20Font%20Complete%20Mono.ttf
 echo -e $"${GREEN}Ok!${RESET}\n"
